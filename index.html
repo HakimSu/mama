@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mom!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ea;
+            color: #333;
+        }
+        .header {
+            background-color: #2e5a1c;
+            color: #ffd700;
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 5px solid #ffd700;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .photo-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .photo-container {
+            border: 8px solid #ffd700;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .message {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .memories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .memory {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2e5a1c;
+            color: #ffd700;
+            border-top: 5px solid #ffd700;
+        }
+        h1, h2, h3 {
+            color: #2e5a1c;
+        }
+        .header h1 {
+            color: #ffd700;
+            font-size: 2.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #2e5a1c;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2e5a1c;
+            color: #ffd700;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .countdown {
+            font-size: 1.25rem;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+        .wishes {
+            font-style: italic;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Happy Birthday Mom!</h1>
+        <p>Celebrating the most wonderful woman in my life</p>
+    </div>
+    
+    <div class="container">
+        <div class="photo-section">
+            <div class="photo-container">
+                <!-- Placeholder image - replace with your actual image -->
+                <img src="/ghibli_style_image.png" alt="Mom's Photo" />
+            </div>
+        </div>
+        
+        <div class="message">
+            <h2>A Special Message for You</h2>
+            <p>Dear Mom,</p>
+            <p>On this special day, I want to take a moment to tell you how much you mean to me. Your love, strength, and wisdom have guided me throughout my life, and I am forever grateful for everything you do.</p>
+            <p>You've always been there for me through thick and thin, celebrating my successes and helping me through tough times. Your kindness, patience, and unwavering support have shaped me into the person I am today.</p>
+            <p>I hope this birthday brings you as much joy as you've brought into my life.</p>
+            <p class="wishes">Wishing you health, happiness, and all the love in the world!</p>
+            <p>With all my love,</p>
+            <p>[Your Name]</p>
+        </div>
+        
+        <h2>Our Favorite Memories Together</h2>
+        <div class="memories">
+            <div class="memory">
+                <h3>Family Trips</h3>
+                <p>Remember that time we went to the beach and built sandcastles all afternoon? Your smile was brighter than the sun that day.</p>
+            </div>
+            <div class="memory">
+                <h3>Kitchen Adventures</h3>
+                <p>Learning your secret recipes has been one of the greatest gifts. Nobody makes cookies like you do!</p>
+            </div>
+            <div class="memory">
+                <h3>Life Lessons</h3>
+                <p>Thank you for always having the right words of wisdom when I needed them most.</p>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+    <div class="footer">
+        <p>Made with ❤️ for the best mom in the world</p>
+        <p>May 2025</p>
+    </div>
+
+    <script>
+        // You could add a script here to show the actual photo
+        // This is just a placeholder - you would need to implement
+        // your own logic to display the image
+        
+        // Example countdown script (if birthday is upcoming)
+        function initCountdown() {
+            // Set the target date (example: May 15, 2025)
+            const targetDate = new Date("May 15, 2025").getTime();
+            
+            // Update the countdown every second
+            const countdownEl = document.createElement('div');
+            countdownEl.className = 'countdown';
+            document.querySelector('.header').appendChild(countdownEl);
+            
+            // Update countdown function
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    countdownEl.innerHTML = "Happy Birthday Today! 🎉";
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                countdownEl.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until your special day!`;
+            }
+            
+            // Initial call
+            updateCountdown();
+            
+            // Update every second
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Call the countdown function
+        // initCountdown(); // Uncomment this if you want to show a countdown
+    </script>
+</body>
+</html>
